@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    
+    <div id="app-container">
+
+        <header>
+            <!-- Logo -->
+            <img id="logo" src="img/logo.png" alt="List logo">
+
+            <!-- Filters -->
+            <div class="filters">
+                <!-- Add new -->
+                <div class="filter">
+                    <input @keyup.enter='addNew' v-model="newTodo" type="text" placeholder="Aggiungi nuovo">
+                    <button @click='addNew'>Aggiungi</button>
+                </div>
+            </div>
+
+        </header>
+
+        <main>
+            
+            <ul>
+                <li v-for='(todo, index) in todos'>
+                    <span class="todo-text" :class="{'done': todos[index].done === true }">{{ todos[index].text }}</span>
+
+                    <div class="todo-actions">
+                        <i class="fas fa-check-circle" @click='markAsDone(index)'></i>
+                        <i class="fas fa-trash-alt" @click='deleteThis(index)'></i>
+                    </div>
+                    
+                </li>
+            </ul>
+            
+        </main>
+
+        
+
+    </div>
+    
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common */
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* App */
+#app-container{
+    width: 60%;
+    height: 100vh;
+    margin: auto;
+}
+
+/* Header */
+header{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    margin: 30px auto;
+}
+#logo{
+    display: block;
+    width: 150px;
+    height: 150px;
+}
+/* Filters */
+.filters{
+    padding: 10px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+input,
+button{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Main */
+main{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    
+    padding: 30px;
+}
+main ul{
+    width: 100%;
+    list-style: none;
+}
+main li{
+    border-bottom: 1px solid gray;
+    padding: 10px;
+
+    font-size: 20px;
+}
+.todo-text{
+    font-weight: 500;
+}
+.todo-text.done{
+    text-decoration: line-through;
+}
+.todo-actions{
+    float: right;
+}
+.todo-actions i{
+    cursor: pointer;
+    margin-left: 10px;
+}
