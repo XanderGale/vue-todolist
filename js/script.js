@@ -44,21 +44,19 @@ const todolist = new Vue(
         methods: {
             addNew: function(){
                 const trimNewTodo = this.newTodo.trim();
-                if (trimNewTodo.length > 2) {
+                if (trimNewTodo.length > 1) {
                     this.todos.push({
                         text: this.newTodo,
                         done: false,
                     });
-                    this.newTodo = '';
                 }
+                this.newTodo = '';
             },
             deleteThis: function(index){
                 this.todos.splice(index, 1);
             },
             markAsDone: function(index){
-                
-                this.todos[index].done = !this.todos[index].done;
-                
+                this.todos[index].done = !this.todos[index].done; 
             }
         }
     }
