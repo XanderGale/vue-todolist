@@ -40,7 +40,7 @@
 
         <main>
             
-            <ul>
+            <ul v-if="todos.length > 0">
                 <li v-for='(todo, index) in todos'>
                     <span class="todo-text" :class="{'done': todos[index].done }">{{ todos[index].text }}</span>
 
@@ -51,6 +51,7 @@
                     
                 </li>
             </ul>
+            <span v-else >La tua lista è vuota.</span>
             
         </main>
 
