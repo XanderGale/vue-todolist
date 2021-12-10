@@ -45,7 +45,8 @@
                     <span class="todo-text" :class="{'done': todos[index].done }">{{ todos[index].text }}</span>
 
                     <div class="todo-actions">
-                        <i class="fas fa-check-circle" @click='markAsDone(index)'></i>
+                        <i v-if='todos[index].done === false' class="fas fa-check-circle" @click='markAsDone(index)'></i>
+                        <i v-else class="fas fa-times-circle" @click='markAsDone(index)'></i>
                         <i class="fas fa-trash-alt" @click='deleteThis(index)'></i>
                     </div>
                     
