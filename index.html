@@ -42,7 +42,7 @@
             
             <ul>
                 <li v-for='(todo, index) in todos'>
-                    <span class="todo-text" :class="{'done': todos[index].done === true }">{{ todos[index].text }}</span>
+                    <span class="todo-text" :class="{'done': todos[index].done }">{{ todos[index].text }}</span>
 
                     <div class="todo-actions">
                         <i class="fas fa-check-circle" @click='markAsDone(index)'></i>

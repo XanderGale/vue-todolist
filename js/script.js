@@ -56,11 +56,9 @@ const todolist = new Vue(
                 this.todos.splice(index, 1);
             },
             markAsDone: function(index){
-                if (this.todos[index].done = true){
-                    this.todos[index].done = false;
-                } else {
-                    this.todos[index].done = true;
-                }
+                
+                this.todos[index].done = !this.todos[index].done;
+                
             }
         }
     }
